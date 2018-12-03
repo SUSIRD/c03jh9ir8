@@ -1,11 +1,27 @@
-<ul>
- 
-  <li><%= @pic %></li> 
-  <li><%= @name %></li>
-  <li><%= @bio%></li>
-  <li><%=  @born%></li>
-  <li><%= @lugborn%></li> 
-  <li><%= @die %></li> 
-  <li><%= @place %></li>
+ <% @actors.each do |actor| %> 
+ <body class="text-center" style="background-color: #FFE4E1" >
+    <TABLE width="100%" border="1"  bordercolorlight="red" bordercolordark="maroon">
+        <tr>
+        <th width="20%" ><h1>Nombre: <%= actor.name %></h1></th> 
+        </tr>    
+        <tr>
+        <th width="20%" ><h3>Fecha de nacimiento: <%= actor.birth_date %></h3></th>   
+        </tr>  
+        <tr>
+        <th width="20%" ><h3>Lugar de nacimiento: </h3><%= actor.birth_place %></th>  
+        </tr> 
+        <% unless  actor.alive%> 
+        <tr>
+        <th width="20%" ><h3>Lugar de fallecimiento: </h3><%= actor.death_date %></th> 
+        </tr> 
+        <tr>
+        <th width="20%" ><h3>Lugar de fallecimiento: </h3><%= actor.death_place %></th> 
+        </tr>
 
-</ul>
+        <% end %> 
+        <tr>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+        <th width="20%" ><%= image_tag(actor.image_url) %></th>  
+        </tr>
+    </TABLE>
+    </body>
+<% end %>
